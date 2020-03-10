@@ -10,7 +10,7 @@ GAME FUNCTION:
 //  Game values
 let min = 1,
   max = 10,
-  winningNum = 2,
+  winningNum = getRandomNum(min, max),
   guessesLeft = 3;
 
 //   UI elements
@@ -70,6 +70,11 @@ guessBtn.addEventListener("click", function() {
     }
   }
 });
+
+// Get Winning Number
+function getRandomNum() {
+  console.log(Math.floor(Math.random() * (max - min + 1) + min));
+}
 
 // Game OVer
 function gameOver(won, msg) {
